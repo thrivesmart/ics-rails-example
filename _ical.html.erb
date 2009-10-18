@@ -1,0 +1,22 @@
+<div id="add_to_calendar" class="menu-parent basic-button-box">
+  <a title="Click to add this event to various calendars.">Add to Calendar</a>
+  <div id="add_to_calendar_options" class="ics-menu" style="display:none">
+    <ul>
+      <li class="cal-outlook">
+        <%=link_to 'Outlook', formatted_project_project_event_path(@project, project_event, 'ics', :outlook => true), :title => "Download a file you can open in Outlook." %>
+      </li>
+      <li class="cal-ical">
+        <%=link_to 'Apple iCal', formatted_event_url(event, 'ics'), :title => 'Download a file you can open in Apple iCal.' %>
+      </li>
+      <li class="cal-google">
+        <%=link_to 'Google', add_to_g_cal(event), :title => 'Download a file you can open in Apple iCal.', :target => '_blank' %>
+      </li>
+      <li class="cal-yahoo">
+        <%=link_to 'Yahoo', add_to_y_cal(event), :title => 'Add to My Yahoo! Calendar.', :target => '_blank' %>
+      </li>
+      <li class="cal-ics">
+        <%=link_to 'Download .ics File', formatted_project_project_event_path(@project, project_event, 'ics'), :title => "A generic .ics file you can open in most calendar programs." %>
+      </li>
+    </ul>
+  </div>
+</div>
